@@ -731,12 +731,12 @@ func (d *Definition) loadFields() error {
 			// so non-empty package path means a private field, which we should skip
 			continue
 		}
-		fmt.Printf("[JUSTFORDEBUG]: argumentInfo, field name: %s, field.Tag: %v", field.Name, field.Tag)
+		fmt.Printf("[JUSTFORDEBUG]: argumentInfo, field name: %s, field.Tag: %v\n", field.Name, field.Tag)
 		argName, optionalOpt := argumentInfo(field.Name, field.Tag)
-		fmt.Printf("[JUSTFORDEBUG]: argumentInfo, argName: %s, optionalOpt: %v", argName, optionalOpt)
+		fmt.Printf("[JUSTFORDEBUG]: argumentInfo, argName: %s, optionalOpt: %v\n", argName, optionalOpt)
 
 		argType, err := ArgumentFromType(field.Type)
-		fmt.Printf("[JUSTFORDEBUG]: ArgumentFromType, field.Type: %s, argType: %v", field.Type.String(), argType.String())
+		fmt.Printf("[JUSTFORDEBUG]: ArgumentFromType, field.Type: %s, argType: %v\n", field.Type.String(), argType.String())
 		if err != nil {
 			return fmt.Errorf("unable to extract type information for field %q: %w", field.Name, err)
 		}
