@@ -64,6 +64,7 @@ func (p *Parser) NeedCRDFor(groupKind schema.GroupKind, maxDescLen *int) {
 	}
 
 	defaultPlural := strings.ToLower(flect.Pluralize(groupKind.Kind))
+	fmt.Printf("[JUSTFORDEBUG] v0.11.0 recognized plural: %s\n", defaultPlural)
 	crd := apiext.CustomResourceDefinition{
 		TypeMeta: metav1.TypeMeta{
 			APIVersion: apiext.SchemeGroupVersion.String(),
