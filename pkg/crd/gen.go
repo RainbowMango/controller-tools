@@ -171,6 +171,7 @@ func (g Generator) Generate(ctx *genall.GenerationContext) error {
 			} else {
 				fileName = fmt.Sprintf("%s_%s.%s.yaml", crdRaw.Spec.Group, crdRaw.Spec.Names.Plural, crdVersions[i])
 			}
+			fmt.Printf("[JUSTFORDEBUG] Generated file name is: %s\n", fileName)
 			if err := ctx.WriteYAML(fileName, headerText, []interface{}{crd}, genall.WithTransform(transformRemoveCRDStatus), genall.WithTransform(genall.TransformRemoveCreationTimestamp)); err != nil {
 				return err
 			}
