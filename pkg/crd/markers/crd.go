@@ -284,6 +284,7 @@ type Resource struct {
 }
 
 func (s Resource) ApplyToCRD(crd *apiext.CustomResourceDefinitionSpec, _ string) error {
+	fmt.Printf("[JUSTFORDEBUG] s.Path= %s\n", s.Path)
 	if s.Path != "" {
 		crd.Names.Plural = s.Path
 	}
